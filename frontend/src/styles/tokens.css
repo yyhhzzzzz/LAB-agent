@@ -1,0 +1,158 @@
+/* ========================================================================
+   Design Tokens — Laboratory Equipment Assistant  v3
+   暖米色 · Notion / Linear 风格
+   布局与字号保持 v2,只换色板
+   ======================================================================== */
+
+:root {
+  /* ---------- 色板:暖米色中性灰 ---------- */
+  --c-bg-0: #FAFAF7;          /* 页面底,米白 */
+  --c-bg-1: #FFFFFF;          /* 面板/卡片,纯白 */
+  --c-bg-2: #F4F2ED;          /* 选中/行高亮 */
+  --c-bg-3: #EAE8E1;          /* hover */
+
+  --c-line-1: #EBE8DF;        /* 主分割线,暖灰 */
+  --c-line-2: #D6D2C5;        /* 边框,深一点 */
+
+  --c-fg-0: #2A2A28;          /* 主文字,接近黑但带暖 */
+  --c-fg-1: #6B6960;          /* 次文字,暖灰 */
+  --c-fg-2: #94928A;          /* 辅助 */
+  --c-fg-3: #B8B6AE;          /* 边界 / disabled */
+
+  /* ---------- 语义色(克制,低饱和) ---------- */
+  /* accent:深墨绿,呼应实验室与"信号",不抢眼 */
+  --c-accent: #0F766E;        /* teal-700 */
+  --c-accent-2: #0F766E;
+  --c-accent-3: #0D5C56;
+  --c-accent-fg: #FFFFFF;
+  --c-accent-soft: rgba(15, 118, 110, 0.08);
+  --c-accent-line: rgba(15, 118, 110, 0.20);
+
+  /* 状态 3 档(深而不刺) */
+  --c-ok: #15803D;            /* green-700 */
+  --c-warn: #B45309;          /* amber-700 */
+  --c-bad: #B91C1C;           /* red-700 */
+
+  /* Legacy aliases for common/* 组件 */
+  --c-info: #4B5563;
+  --c-info-soft: rgba(75, 85, 99, 0.10);
+  --c-success: var(--c-ok);
+  --c-success-soft: rgba(21, 128, 61, 0.10);
+  --c-warning: var(--c-warn);
+  --c-warning-soft: rgba(180, 83, 9, 0.10);
+  --c-danger: var(--c-bad);
+  --c-danger-soft: rgba(185, 28, 28, 0.10);
+  --c-neutral: #6B6960;
+  --c-neutral-soft: rgba(107, 105, 96, 0.10);
+
+  --c-mask: rgba(0, 0, 0, 0.4);
+
+  /* ---------- 字体 ---------- */
+  --ff-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --ff-mono: 'JetBrains Mono', 'Berkeley Mono', 'SF Mono', Menlo, Monaco, 'Courier New', monospace;
+
+  /* ---------- 字号:沿用 v2 ---------- */
+  --fs-xs: 11px;
+  --fs-sm: 12px;
+  --fs-base: 13px;
+  --fs-md: 14px;
+  --fs-lg: 18px;
+  --fs-xl: 24px;
+  --fs-2xl: 32px;
+
+  --lh-tight: 1.3;
+  --lh-normal: 1.5;
+  --lh-loose: 1.7;
+
+  /* ---------- 字重 ---------- */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ---------- 间距 ---------- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-7: 32px;
+  --s-8: 48px;
+  --s-9: 64px;
+  --s-10: 80px;
+
+  /* ---------- 圆角 ---------- */
+  --r-xs: 2px;
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-lg: 8px;
+  --r-xl: 12px;
+  --r-pill: 999px;
+
+  /* ---------- 动效 ---------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+
+  /* ---------- 布局 ---------- */
+  --layout-sidebar: 220px;
+  --layout-topbar: 52px;
+  --layout-rail: 280px;
+}
+
+[data-role="student"] {
+  --c-bg-0: #fbfcf4;
+  --c-bg-1: #ffffff;
+  --c-bg-2: #f2f4e7;
+  --c-bg-3: #e6ebd4;
+  --c-line-1: #e4e8d9;
+  --c-line-2: #c9d3b1;
+  --c-fg-0: #29362d;
+  --c-fg-1: #60705f;
+  --c-fg-2: #829080;
+  --c-fg-3: #aeb9a5;
+  --c-accent: #657a38;
+  --c-accent-2: #657a38;
+  --c-accent-3: #4d5f2b;
+  --c-accent-soft: rgba(101, 122, 56, .1);
+  --c-accent-line: rgba(101, 122, 56, .26);
+}
+
+[data-role="teacher"] {
+  --c-bg-0: #f3f9f7;
+  --c-bg-1: #ffffff;
+  --c-bg-2: #e8f2ef;
+  --c-bg-3: #dceae7;
+  --c-line-1: #d9e8e4;
+  --c-line-2: #b6d2cc;
+  --c-fg-0: #243b3b;
+  --c-fg-1: #5d7472;
+  --c-fg-2: #819391;
+  --c-fg-3: #adbfbb;
+  --c-accent: #23766c;
+  --c-accent-2: #23766c;
+  --c-accent-3: #1a5b53;
+  --c-accent-soft: rgba(35, 118, 108, .1);
+  --c-accent-line: rgba(35, 118, 108, .24);
+}
+
+[data-role="admin"] {
+  --c-bg-0: #fbf7f0;
+  --c-bg-1: #ffffff;
+  --c-bg-2: #f3e9dc;
+  --c-bg-3: #e9d6c0;
+  --c-line-1: #eadfd4;
+  --c-line-2: #d5b99d;
+  --c-fg-0: #3d2d2a;
+  --c-fg-1: #735d57;
+  --c-fg-2: #947d75;
+  --c-fg-3: #bba8a0;
+  --c-accent: #8c5a43;
+  --c-accent-2: #8c5a43;
+  --c-accent-3: #684332;
+  --c-accent-soft: rgba(140, 90, 67, .11);
+  --c-accent-line: rgba(140, 90, 67, .25);
+}
