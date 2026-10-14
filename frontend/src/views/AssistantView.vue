@@ -363,10 +363,10 @@ watch(selectedEquipment, () => {
               :class="[`message--${message.role}`, { 'message--error': message.error }]"
             >
               <template v-if="message.role === 'user'">
+                <div class="message__meta">
+                  <span class="message__role">你</span>
+                </div>
                 <div class="user-bubble">
-                  <div class="message__meta">
-                    <span class="message__role">你</span>
-                  </div>
                   <div class="message__body">
                     <p v-for="(paragraph, index) in message.text.split('\n\n')" :key="index">{{ paragraph }}</p>
                   </div>
@@ -517,13 +517,13 @@ watch(selectedEquipment, () => {
 .conversation__scope { width: min(280px, 45%); color: var(--c-fg-1); font-size: var(--fs-sm); }
 .message-list { flex: 1; min-height: 0; padding: 8px 0 22px; overflow-y: auto; overscroll-behavior: contain; }
 .message { max-width: 760px; padding: 20px 0; border-bottom: 1px solid var(--c-line-1); animation: messageIn var(--dur-base) var(--ease-out) both; }
-.message--user { width: 100%; max-width: 760px; margin-top: 12px; margin-right: 0; margin-bottom: 12px; margin-left: auto; padding: 0; border: 0; background: transparent; text-align: right; }
+.message--user { display: flex; width: calc(100% - 24px); max-width: 760px; flex-direction: column; align-items: flex-end; margin: 12px 24px 12px auto; padding: 0; border: 0; background: transparent; text-align: right; }
 .user-bubble { display: inline-block; width: max-content; max-width: min(72%, 560px); padding: 13px 16px; background: var(--c-bg-2); border-left: 2px solid var(--c-accent-line); border-radius: var(--r-sm); text-align: right; }
 .message--error { border-left: 2px solid var(--c-bad); padding-left: 14px; }
 .message__meta { display: flex; align-items: center; gap: 9px; margin-bottom: 9px; color: var(--c-fg-2); font: 500 10px/1.2 var(--ff-mono); letter-spacing: 0.09em; }
-.user-bubble .message__meta { justify-content: flex-end; }
+.message--user .message__meta { justify-content: flex-end; margin: 0 0 8px; }
 .message__role { color: var(--c-accent); }
-.user-bubble .message__role { color: var(--c-fg-1); }
+.message--user .message__role { color: var(--c-fg-1); }
 .message__body { max-width: 68ch; color: var(--c-fg-0); font-size: 14px; line-height: 1.72; }
 .user-bubble .message__body { max-width: none; text-align: right; overflow-wrap: anywhere; }
 .message__body p + p { margin-top: 10px; }
@@ -589,6 +589,7 @@ watch(selectedEquipment, () => {
   .logout-button { padding: 5px; }
   .new-thread { padding: 0 8px; font-size: var(--fs-xs); }
   .assistant-layout { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(420px, 1fr) auto; gap: 16px; min-height: 0; }
+  .message--user { width: calc(100% - 12px); margin-right: 12px; }
   .conversation-history { max-height: 280px; }
   .conversation-history__list { max-height: 180px; }
   .conversation__scope { width: 100%; max-width: 100%; }
